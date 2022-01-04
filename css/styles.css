@@ -14,3 +14,7 @@
     height: 25px;
     width: 25px;
 }
+
+.squares:hover {
+    background-color: lightgray;
+}
