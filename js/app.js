@@ -1,25 +1,35 @@
 const divs = document.querySelectorAll('div');
 
 
-
-const squareCreate = function(){
+const squareCreate = function(num){
+    num *= num;
 
     let divContainer = document.createElement('container');
+    let resetButton = document.createElement('button');
 
     divContainer.setAttribute('class', 'divContainer');
+    resetButton.setAttribute('class', 'reset-btn')
+    resetButton.textContent = "Reset";
+
+    divContainer.appendChild(resetButton);
     document.body.appendChild(divContainer);
 
     // loops through and creates / appends 256 child divs
-    for(let i = 1; i <= 256; i++){
+    for(let i = 1; i <= num; i++){
         let childDivs = document.createElement('div');
 
         childDivs.setAttribute('class', 'squares');
         divContainer.appendChild(childDivs);
     }
+
 }
+
+squareCreate(16);
 
 const squareColor = function(){
     let squares = document.querySelectorAll('.squares');
+    const reset = document.querySelector('.reset-btn');
+
     let isDrawing = false;
     let x = 0;
     let y = 0;
@@ -30,7 +40,7 @@ const squareColor = function(){
             y = e.offsetY;
             
             if(x > 0 && y > 0){
-                item.style.backgroundColor = "lightgray";
+                item.classList.add('colored');
                 isDrawing = true;
             }            
         });
@@ -40,7 +50,7 @@ const squareColor = function(){
                 x = 0;
                 y = 0;
                 
-                item.style.backgroundColor = "lightgray";               
+                item.classList.add('colored');              
             }
         });
 
@@ -50,9 +60,13 @@ const squareColor = function(){
             isDrawing = false;
         });
 
+        reset.addEventListener('click', () => {
+            item.classList.remove('colored');
+        });
     });
+
 }
 
-squareCreate();
+
 squareColor();
 
