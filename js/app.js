@@ -66,7 +66,7 @@ const squareColor = function(){
     });
 
 }
-
+// random comment
 
 squareColor();
 
