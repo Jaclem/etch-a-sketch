@@ -2,71 +2,61 @@ const divs = document.querySelectorAll('div');
 
 
 const squareCreate = function(num){
-    num *= num;
+    let divContainer = document.getElementById('draw-pad');
+    divContainer.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
 
-    let divContainer = document.createElement('container');
-    let resetButton = document.createElement('button');
 
-    divContainer.setAttribute('class', 'divContainer');
-    resetButton.setAttribute('class', 'reset-btn')
-    resetButton.textContent = "Reset";
-
-    divContainer.appendChild(resetButton);
-    document.body.appendChild(divContainer);
-
-    // loops through and creates / appends 256 child divs
-    for(let i = 1; i <= num; i++){
+    for(let i = 0; i < num * num; i++){
         let childDivs = document.createElement('div');
-
         childDivs.setAttribute('class', 'squares');
         divContainer.appendChild(childDivs);
     }
 
 }
 
-squareCreate(16);
+squareCreate(44);
 
-const squareColor = function(){
-    let squares = document.querySelectorAll('.squares');
-    const reset = document.querySelector('.reset-btn');
+// const squareColor = function(){
+//     let squares = document.querySelectorAll('.squares');
+//     const reset = document.querySelector('.reset-btn');
 
-    let isDrawing = false;
-    let x = 0;
-    let y = 0;
+//     let isDrawing = false;
+//     let x = 0;
+//     let y = 0;
 
-    squares.forEach(item => {
-        item.addEventListener('mousedown', (e)=> {
-            x = e.offsetX;
-            y = e.offsetY;
+//     squares.forEach(item => {
+//         item.addEventListener('mousedown', (e)=> {
+//             x = e.offsetX;
+//             y = e.offsetY;
             
-            if(x > 0 && y > 0){
-                item.classList.add('colored');
-                isDrawing = true;
-            }            
-        });
+//             if(x > 0 && y > 0){
+//                 item.classList.add('colored');
+//                 isDrawing = true;
+//             }            
+//         });
 
-        item.addEventListener('mousemove', () => {
-            if (isDrawing === true) {
-                x = 0;
-                y = 0;
+//         item.addEventListener('mousemove', () => {
+//             if (isDrawing === true) {
+//                 x = 0;
+//                 y = 0;
                 
-                item.classList.add('colored');              
-            }
-        });
+//                 item.classList.add('colored');              
+//             }
+//         });
 
-        item.addEventListener('mouseup', () => {
-            x = 0;
-            y = 0;
-            isDrawing = false;
-        });
+//         item.addEventListener('mouseup', () => {
+//             x = 0;
+//             y = 0;
+//             isDrawing = false;
+//         });
 
-        reset.addEventListener('click', () => {
-            item.classList.remove('colored');
-        });
-    });
+//         reset.addEventListener('click', () => {
+//             item.classList.remove('colored');
+//         });
+//     });
 
-}
-// random comment
+// }
+// // random comment
 
-squareColor();
+// squareColor();
 
