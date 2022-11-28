@@ -8,32 +8,82 @@ html {
     width: 100%;
     padding: 0;
     margin: 0;
+    background-color: #474E68;
 }
 
 .card {
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 15px;
+    column-gap: 7px;
     height: 70%; /* Need height to determine where the box inside the .card container goes. */
   }
 
 .user-options {
     height: 400px;
-    width: 150px;
-    align-items: center;
+    width: 200px;
     border: 1px solid lightgray;
-    
+    background-color: #404258;
+    border-radius: 10px 0 0 10px;
 }
+
+.color-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 30px;
+    margin-top: 30px;
+}
+
+.color-selection label {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.color-selection input {
+    grid-column-start: 2;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    margin: auto;
+    background-color: #50577A;
+}
+
+.clear-card {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.clear-card button {
+    padding: 15px;
+    width: 138px;
+    border-radius: 15px;
+    border: 1px solid #262a3a;
+    background-color: #50577A;
+    cursor: pointer;
+}
+
+.clear-card button:hover {
+    background-color:#3b425c;
+    border: 1px solid #6f7cac;
+}
+
   
 .draw-pad {
     display: grid;
     width: 400px;
     height: 400px;
     border: 1px solid lightgray;
+    background-color: rgba(255, 255, 255, 0.747);
+    cursor: crosshair;
 }
 
-.squares {
-    background-color: green;
-
+.colored {
+    background-color: black;
 }

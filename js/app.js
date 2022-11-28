@@ -1,5 +1,10 @@
-const divs = document.querySelectorAll('div');
+const defaultColor = 'black';
+const reset = document.querySelector('.reset');
+const drawPad = document.getElementById('draw-pad');
 
+let mouseDown = false;
+
+// create drawing squares in a grid for the canvas (drawing pad)
 
 const squareCreate = function(num){
     let divContainer = document.getElementById('draw-pad');
@@ -14,49 +19,38 @@ const squareCreate = function(num){
 
 }
 
-squareCreate(44);
+squareCreate(16);
 
-// const squareColor = function(){
-//     let squares = document.querySelectorAll('.squares');
-//     const reset = document.querySelector('.reset-btn');
+// add functionality to the coloring effect of the canvas
 
-//     let isDrawing = false;
-//     let x = 0;
-//     let y = 0;
+document.body.addEventListener('mousedown', (e)=>{
+    e.preventDefault();
+    square = e.target;
 
-//     squares.forEach(item => {
-//         item.addEventListener('mousedown', (e)=> {
-//             x = e.offsetX;
-//             y = e.offsetY;
-            
-//             if(x > 0 && y > 0){
-//                 item.classList.add('colored');
-//                 isDrawing = true;
-//             }            
-//         });
+    if(e.target.parentElement == drawPad){
+        squareColor(square);
+        mouseDown = true;
+    }     
+});
 
-//         item.addEventListener('mousemove', () => {
-//             if (isDrawing === true) {
-//                 x = 0;
-//                 y = 0;
-                
-//                 item.classList.add('colored');              
-//             }
-//         });
+document.body.addEventListener('mouseup', (e)=> {
+    square = e.target;
+    mouseDown = false;  
+     
+});
 
-//         item.addEventListener('mouseup', () => {
-//             x = 0;
-//             y = 0;
-//             isDrawing = false;
-//         });
+drawPad.addEventListener('mousemove', (e)=> {
+    square = e.target;
 
-//         reset.addEventListener('click', () => {
-//             item.classList.remove('colored');
-//         });
-//     });
+    if(mouseDown == true && e.target.parentElement == drawPad){
+        squareColor(square);
+    } 
+});
 
-// }
-// // random comment
+const squareColor = function(square) {
+    square.style.backgroundColor = defaultColor;
+}
 
-// squareColor();
+// https://stackoverflow.com/questions/71377320/css-js-mousedown-getting-stuck-during-drag-event
+
 
