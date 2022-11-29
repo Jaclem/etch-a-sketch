@@ -8,7 +8,17 @@ html {
     width: 100%;
     padding: 0;
     margin: 0;
-    background-color: #474E68;
+    background-color: #222222;
+}
+
+
+.site-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+    font-family: 'Lobster', cursive;
+    color: rgb(212, 211, 212);
 }
 
 .card {
@@ -16,15 +26,15 @@ html {
     align-items: center;
     justify-content: center;
     column-gap: 7px;
-    height: 70%; /* Need height to determine where the box inside the .card container goes. */
+    height: 400px; /* Need height to determine where the box inside the .card container goes. */
   }
 
 .user-options {
     height: 400px;
     width: 200px;
-    border: 1px solid lightgray;
-    background-color: #404258;
+    background-color: #2c2c2c;
     border-radius: 10px 0 0 10px;
+    box-shadow: 0 1px 8px 0 #5e74e3;
 }
 
 .color-selection {
@@ -32,46 +42,58 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 30px;
-    margin-top: 30px;
+    height: 154px;
 }
 
 .color-selection label {
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 20px;
     color: white;
+    height: 40px;
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
 }
 
-.color-selection input {
-    grid-column-start: 2;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 10px;
-    margin: auto;
-    background-color: #50577A;
+input[type='color'] {
+    width: 80px;
+    height: 80px;
+    background-color: #5e74e3;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: ease-in-out 0.2s;
+    border-radius: 360px;
+}
+
+input[type='color']:hover{
+    background-color: #5e74e3;
+    opacity: 1;
 }
 
 .clear-card {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    align-items: center;
+    height: 122px;
 }
 
 .clear-card button {
-    padding: 15px;
     width: 138px;
-    border-radius: 15px;
+    height: 50px;
+    border-radius: 10px;
     border: 1px solid #262a3a;
-    background-color: #50577A;
+    background-color: #a3a3a354;
     cursor: pointer;
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    opacity: 0.8s; 
+    transition: ease-in-out .2s;
+    appearance: none;
 }
 
 .clear-card button:hover {
-    background-color:#3b425c;
+    background-color:#7e91ce;
     border: 1px solid #6f7cac;
+    opacity: 1;
+    box-shadow: 0 1px 8px 0 #5e74e3;
 }
 
   
@@ -87,3 +109,35 @@ html {
 .colored {
     background-color: black;
 }
+
+/* .slidecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}  */
+
+/* The slider itself */
+/* .slider {
+    justify-content: center;
+    appearance: none;
+    height: 10px;
+    background: #f3f3f3; 
+    opacity: 0.7; 
+    -webkit-transition: .2s; 
+    transition: opacity .2s;
+} */
+
+/* .slider:hover {
+    opacity: 1; 
+} */
+
+/* .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 20px; 
+    height: 20px; 
+    background: #5e74e3; 
+    cursor: pointer;
+}  */
+

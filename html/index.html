@@ -5,18 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>PxlArt</title>
 </head>
 <body>
+    <div class="site-name">
+        <h1>PxlArt</h1>
+    </div>
+
     <div class="card">
         <div class="user-options">
+
             <div class="color-selection">
                 <label>Color Picker</label>
-                <input type="color" diable>
+                <input type="color" id="color-picker" value="#000000">
             </div>
+
             <div class="clear-card">
-                <button class="reset">Clear</button>
+                <button class="reset" id="reset">Clear</button>
             </div>
+        
         </div>
 
         <div class="draw-pad" id="draw-pad"></div>
