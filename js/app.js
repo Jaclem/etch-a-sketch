@@ -34,7 +34,7 @@ const squareCreate = function(num){
     }
 }
 
-squareCreate(16);
+// squareCreate(16);
 
 // function allows users to draw and determines the color of the brush
 
@@ -53,6 +53,11 @@ const start = function(val) {
     squareCreate(val);
 }
 // event listeners //
+
+window.onload = () => {
+    let val = slider.value;
+    squareCreate(val);
+};
 
 // add functionality to the coloring effect of the canvas
 
