@@ -110,15 +110,16 @@ input[type='color']:hover{
     background-color: black;
 }
 
-/* .slidecontainer {
+.slidecontainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100px;
-}  */
+} 
 
 /* The slider itself */
-/* .slider {
+.slider {
     justify-content: center;
     appearance: none;
     height: 10px;
@@ -126,18 +127,25 @@ input[type='color']:hover{
     opacity: 0.7; 
     -webkit-transition: .2s; 
     transition: opacity .2s;
-} */
+}
 
-/* .slider:hover {
+.slider:hover {
     opacity: 1; 
-} */
+}
 
-/* .slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none; 
     appearance: none;
     width: 20px; 
     height: 20px; 
     background: #5e74e3; 
     cursor: pointer;
-}  */
+} 
+
+.output {
+    justify-content: center;
+    color: white;
+    font-family: 'Lobster', cursive;
+    height: 5px;
+}
 

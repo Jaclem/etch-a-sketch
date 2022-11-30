@@ -3,10 +3,14 @@ const reset = document.getElementById('reset');
 const drawPad = document.getElementById('draw-pad');
 const colorInput = document.getElementById('color-picker');
 const slider = document.getElementById('slider-range');
+const output = document.getElementById('output');
 
 let mouseDown = false;
 let colorClicked = false;
 let drawPadClear = false;
+let drawPadSize = slider.value;
+
+output.innerHTML = drawPadSize;
 
 // create drawing squares in a grid for the canvas (drawing pad)
 
@@ -44,9 +48,15 @@ const draw = function(square) {
     }
 }
 
+const start = function(val) {
+    output.innerHTML = val;
+    squareCreate(val);
+}
+// event listeners //
+
 // add functionality to the coloring effect of the canvas
 
-document.body.addEventListener('mousedown', (e)=>{
+drawPad.addEventListener('mousedown', (e)=>{
     e.preventDefault();
     square = e.target;
 
@@ -56,7 +66,7 @@ document.body.addEventListener('mousedown', (e)=>{
     }     
 });
 
-document.body.addEventListener('mouseup', (e)=> {
+document.addEventListener('mouseup', (e)=> {
     square = e.target;
     mouseDown = false;  
 });
@@ -72,13 +82,14 @@ drawPad.addEventListener('mousemove', (e)=> {
 colorInput.addEventListener('input', ()=> { colorClicked = true;});
 
 reset.addEventListener('click', ()=> {
-    squareCreate(16);
+    let val = slider.value;
+    squareCreate(val);
 });
 
 slider.addEventListener('input', ()=> {
-    console.log(slider.value);
+    let inputVal = slider.value;
+    start(inputVal);
 })
-
 
 
 // https://stackoverflow.com/questions/71377320/css-js-mousedown-getting-stuck-during-drag-event
