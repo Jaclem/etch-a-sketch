@@ -34,8 +34,6 @@ const squareCreate = function(num){
     }
 }
 
-// squareCreate(16);
-
 // function allows users to draw and determines the color of the brush
 
 const draw = function(square) {
